@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Conversor de Texto a QR</title>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+
+<div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
+
+
+<input type="text" id="text" placeholder="Escribe algo aquí...">
+<button onclick="generateQR()">Generar QR</button>
+
+<script>
+function generateQR() {
+var text = document.getElementById("text").value;
+document.getElementById("qrcode").innerHTML = "";
+var qr = new QRCode(document.getElementById("qrcode"), {
+text: text,
+width: 200,
+height: 200
+});
+}
+</script>
+
+</body>
+</html>
